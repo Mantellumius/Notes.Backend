@@ -9,9 +9,9 @@ namespace Notes.Application.Notes.Commands.CreateNote
 {
     public class CreateNoteCommandHandler : IRequestHandler<CreateNoteCommand, Guid>
     {
-        private readonly INoteDbContext _dbContext;
+        private readonly INotesDbContext _dbContext;
 
-        public CreateNoteCommandHandler(INoteDbContext dbContext) => _dbContext = dbContext;
+        public CreateNoteCommandHandler(INotesDbContext dbContext) => _dbContext = dbContext;
 
         public async Task<Guid> Handle(CreateNoteCommand request, CancellationToken cancellationToken)
         {
